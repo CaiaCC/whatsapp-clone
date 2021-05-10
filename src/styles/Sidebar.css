@@ -1,21 +1,24 @@
-import styled from "styled-components";
-
-export const Container = styled.div`
+.sidebar {
     display: flex;
     flex-direction: column;
     flex: 0.35;
-`;
+}
 
-export const Header = styled.div`
+.sidebar__header {
     display: flex;
     justify-content: space-between;
     padding: 20px;
     border-right: 1px solid lightgray;
-`;
+}
 
-export const HeaderIcons = styled.div`
+.sidebar__headerRight {
     display: flex;
     align-items: center;
     justify-content: space-between;
     min-width: 10vw;
-`;
+}
+
+.MuiSvgIcon-root {
+    margin-right: 2vw;
+    font-size: 24px !important;
+}
