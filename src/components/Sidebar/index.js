@@ -1,9 +1,16 @@
 import React from "react";
+import { Container, Header, HeaderIcons } from "./StyledSidebarElements";
 
 const Sidebar = () => {
     return (
         <div>
-            <h1>Sidebar</h1>
+            <Container>
+                <Header>
+                    <HeaderIcons>
+                        
+                    </HeaderIcons>
+                </Header>
+            </Container>
         </div>
     )
 };
