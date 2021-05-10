@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
 import '../styles/Chat.css'
 
 import { Avatar, IconButton } from "@material-ui/core";
@@ -10,7 +10,11 @@ import {
     Mic,
 } from "@material-ui/icons";
 
-const Chat = () => {;
+const Chat = () => {
+    const [input, setInput] = useState("");
+
+    const sendMessage = () => {};
+
     return (
         <div className="chat">
             <div className="chat__header">
