@@ -40,9 +40,14 @@ const Chat = () => {;
                         {new Date().toUTCString()}
                     </span>
                 </p>
-                
+                <p className="chat__message chat__receiver">
+                    <span className="chat__name">Caia</span>
+                    This si a message
+                    <span className="chat__timestamp">
+                        {new Date().toUTCString()}
+                    </span>
+                </p>
             </div>
-
         </div>
     );
 }
