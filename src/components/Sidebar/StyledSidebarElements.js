@@ -6,7 +6,7 @@ export const Container = styled.div`
     flex-direction: column;
     flex: 0.35;
 `
-export const HeaderContainer = styled.div`
+export const HeaderWrap = styled.div`
     display: flex;
     justify-content: space-between;
     padding: 20px;
@@ -35,8 +35,7 @@ export const MoreVertIcon = styled(MoreVert)`
     font-size: 24px !important;
 `
 
-
-export const Searchbar = styled.div`
+export const SearchbarWrap = styled.div`
     display: flex;
     align-items: center;
     background-color: #f6f6f6;
@@ -69,7 +68,7 @@ export const ChatCardsContainer = styled.div`
     overflow: scroll;
 `
 
-export const ChatCard = styled.div`
+export const ChatCardWrap = styled.div`
     display: flex;
     padding: 20px;
     cursor: pointer;
