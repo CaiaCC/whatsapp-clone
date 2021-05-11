@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import styled from "styled-components";
+import { useEffect, useState } from "react";
 import Pusher from "pusher-js";
 import axios from "./axios";
 
 import Sidebar from "./components/Sidebar";
 import Chat from "./components/Chat";
+import axios from './axios'
 
 const App = () => {
     const [messages, setMessages] = useState([]);
@@ -32,6 +34,8 @@ const App = () => {
             channel.unsubscribe();
         };
     }, [messages]);
+
+    console.log(messages)
 
     return (
         <Main>
