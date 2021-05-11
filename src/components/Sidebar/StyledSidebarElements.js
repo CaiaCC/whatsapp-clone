@@ -6,7 +6,7 @@ export const Container = styled.div`
     flex-direction: column;
     flex: 0.35;
 `
-export const Header = styled.div`
+export const HeaderContainer = styled.div`
     display: flex;
     justify-content: space-between;
     padding: 20px;
@@ -42,7 +42,7 @@ export const Searchbar = styled.div`
     background-color: #f6f6f6;
     height: 39px;
     padding: 10px;
-    `
+`
 
 export const SearchContainer = styled.div`
     display: flex;
@@ -69,7 +69,7 @@ export const ChatCardsContainer = styled.div`
     overflow: scroll;
 `
 
-export const ChatCardContainer = styled.div`
+export const ChatCard = styled.div`
     display: flex;
     padding: 20px;
     cursor: pointer;
@@ -82,6 +82,7 @@ export const ChatCardContainer = styled.div`
 
 export const ChatCardInfo = styled.div`
     margin-left: 15px;
+
     h2 {
         font-size: 16px;
         margin-bottom: 8px;
