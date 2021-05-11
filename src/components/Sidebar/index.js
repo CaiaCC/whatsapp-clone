@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 
 import {
     Container,
@@ -8,8 +8,13 @@ import ChatCard from "./ChatCard";
 import Header from "./Header";
 import Searchbar from "./Searchbar";
 
-
 const SideBar = () => {
+    const [rooms, setRooms] = useState([]);
+
+    useEffect(() => {
+        
+    }, [])
+
     return (
         <Container>
             <Header />
