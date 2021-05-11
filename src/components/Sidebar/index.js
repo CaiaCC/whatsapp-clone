@@ -6,16 +6,16 @@ import {
 } from "./StyledSidebarElements";
 import ChatCard from "./ChatCard";
 import Header from "./Header";
-import Search from "./Search";
+import Searchbar from "./Searchbar";
 
 
 const SideBar = () => {
     return (
         <Container>
             <Header />
-            <Search />
+            <Searchbar />
             <ChatCardsContainer>
-
+                <ChatCard/>
             </ChatCardsContainer>
         </Container>
     );
