@@ -11,9 +11,10 @@ const App = () => {
     const [messages, setMessages] = useState([]);
 
     useEffect(() => {
-        axios.get("/messages/sync").then((res) => {
-            setMessages(res.data);
-        });
+        axios.get("/messages/sync")
+            .then((res) => {
+                setMessages(res.data);
+            })
     }, []);
 
     useEffect(() => {
@@ -36,10 +37,10 @@ const App = () => {
         <Main>
             <Router>
                 <Switch>
-                <Route path="/">
-                    <Sidebar />
-                    <Chat messages={messages} />
-                </Route>
+                    <Route path="/">
+                        <Sidebar />
+                        <Chat messages={messages} />
+                    </Route>
                 </Switch>
             </Router>
         </Main>
