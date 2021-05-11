@@ -1,5 +1,10 @@
 import React from 'react'
-import { SearchbarWrap, SearchContainer, SearchInput, SearchOutlinedIcon } from './StyledSidebarElements';
+import {
+    SearchbarWrap,
+    SearchContainer,
+    SearchInput,
+    SearchOutlinedIcon,
+} from "./StyledSidebarElements";
 
 const Searchbar = () => {
     return (
