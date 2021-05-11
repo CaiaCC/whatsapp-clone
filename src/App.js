@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import styled from "styled-components";
 
 import Pusher from "pusher-js";
 import axios from "./axios";
+import { useStateValue } from "./StateProvider";
 
 import Sidebar from "./components/Sidebar";
 import Chat from "./components/Chat";
@@ -11,13 +12,12 @@ import Login from "./components/Login";
 
 const App = () => {
     const [messages, setMessages] = useState([]);
-    const [user, setUser] = useState(null)
+    const [{ user }, dispatch] = useStateValue();
 
     useEffect(() => {
-        axios.get("/messages/sync")
-            .then((res) => {
-                setMessages(res.data);
-            })
+        axios.get("/messages/sync").then((res) => {
+            setMessages(res.data);
+        });
     }, []);
 
     useEffect(() => {
@@ -36,25 +36,25 @@ const App = () => {
         };
     }, [messages]);
 
-    console.log(messages)
+    console.log(messages);
 
     return (
         <Main>
-        {!user ? (
-            <Login />
-        ) : (
-            <Router>
-                <Sidebar />
-                <Switch>
-                    <Route path="/rooms/:roomId">
-                        <Chat messages={messages} />
-                    </Route>
-                    <Route path="/">
-                        <Chat messages={messages} />
-                    </Route>
-                </Switch>
-            </Router>
-        )}
+            {!user ? (
+                <Login />
+            ) : (
+                <Router>
+                    <Sidebar />
+                    <Switch>
+                        <Route path="/rooms/:roomId">
+                            <Chat messages={messages} />
+                        </Route>
+                        <Route path="/">
+                            <Chat messages={messages} />
+                        </Route>
+                    </Switch>
+                </Router>
+            )}
         </Main>
     );
 };
