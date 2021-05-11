@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import {auth, provider} from '../../firebase'
 import {
     Wrap,
     Container,
@@ -9,7 +10,10 @@ import {
 
 const Login = () => {
     const signIn = () => {
-
+        auth
+            .signInWithPopup(provider)
+            .then(res => console.log(res))
+            .catch(err => alert(err.message))
     }
 
     return (
