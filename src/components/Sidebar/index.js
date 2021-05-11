@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import { useStateValue } from "../../StateProvider";
 
 import {
     Container,
@@ -11,6 +12,7 @@ import db from '../../firebase'
 
 const SideBar = () => {
     const [rooms, setRooms] = useState([]);
+    const [{ user }, dispatch] = useStateValue();
 
     useEffect(() => {
         const unsubscribe = db.collection('rooms').onSnapshot(snapshot => {
@@ -34,7 +36,7 @@ const SideBar = () => {
 
     return (
         <Container>
-            <Header />
+            <Header user={user}/>
             <Searchbar />
             <ChatContainer>
                 <ChatCard addNewChat createChat={createChat} />

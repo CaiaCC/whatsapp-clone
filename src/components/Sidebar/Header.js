@@ -7,10 +7,10 @@ import {
     ButtonWrap,
 } from "./StyledSidebarElements";
 
-const Header = () => {
+const Header = ({user}) => {
     return (
         <HeaderWrap>
-            <Avatar src="" alt="avatar" />
+            <Avatar src={user?.photoURL} alt="avatar" />
             <HeaderRight>
                 <ButtonWrap>
                     <DonutLarge />
