@@ -13,7 +13,7 @@ const Header = ({ roomName }) => {
 
     useEffect(() => {
         setSeed(Math.floor(Math.random() * 100));
-    }, []);
+    }, [roomName]);
 
     return (
         <HeaderContainer>

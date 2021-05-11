@@ -9,7 +9,7 @@ import Header from "./Header";
 import Searchbar from "./Searchbar";
 import db from '../../firebase'
 
-const SideBar = ({}) => {
+const SideBar = () => {
     const [rooms, setRooms] = useState([]);
 
     useEffect(() => {
