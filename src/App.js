@@ -7,9 +7,11 @@ import axios from "./axios";
 
 import Sidebar from "./components/Sidebar";
 import Chat from "./components/Chat";
+import Login from "./components/Login";
 
 const App = () => {
     const [messages, setMessages] = useState([]);
+    const [user, setUser] = useState(null)
 
     useEffect(() => {
         axios.get("/messages/sync")
@@ -38,6 +40,9 @@ const App = () => {
 
     return (
         <Main>
+        {!user ? (
+            <Login />
+        ) : (
             <Router>
                 <Sidebar />
                 <Switch>
@@ -49,6 +54,7 @@ const App = () => {
                     </Route>
                 </Switch>
             </Router>
+        )}
         </Main>
     );
 };
