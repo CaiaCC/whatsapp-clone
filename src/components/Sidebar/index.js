@@ -15,7 +15,10 @@ const SideBar = () => {
             <Header />
             <Searchbar />
             <ChatCardsContainer>
-                <ChatCard/>
+                <ChatCard addNewChat />
+                <ChatCard />
+                <ChatCard />
+                <ChatCard />
             </ChatCardsContainer>
         </Container>
     );
