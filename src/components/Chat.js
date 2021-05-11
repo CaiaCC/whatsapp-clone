@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from "react";
-import '../styles/Chat.css'
+import React, { useState } from "react";
+import "../styles/Chat.css";
+
+import axios from "../axios";
 
 import { Avatar, IconButton } from "@material-ui/core";
 import {
@@ -10,10 +12,21 @@ import {
     Mic,
 } from "@material-ui/icons";
 
-const Chat = () => {
+const Chat = ({ messages }) => {
     const [input, setInput] = useState("");
 
-    const sendMessage = () => {};
+    const sendMessage = async (e) => {
+        e.preventDefault();
+
+        await axios.post("/messages/new", {
+            name: "CCC",
+            message: input,
+            timestamp: "just now",
+            received: false,
+        });
+
+        setInput("");
+    };
 
     return (
         <div className="chat">
@@ -37,20 +50,19 @@ const Chat = () => {
             </div>
 
             <div className="chat__body">
-                <p className="chat__message">
-                    <span className="chat__name">Caia</span>
-                    This si a message
-                    <span className="chat__timestamp">
-                        {new Date().toUTCString()}
-                    </span>
-                </p>
-                <p className="chat__message chat__receiver">
-                    <span className="chat__name">Caia</span>
-                    This si a message
-                    <span className="chat__timestamp">
-                        {new Date().toUTCString()}
-                    </span>
-                </p>
+                {messages.map((message) => (
+                    <p
+                        className={`chat__message ${
+                            !message.received && "chat__receiver"
+                        }`}
+                    >
+                        <span className="chat__name">{message.name}</span>
+                        {message.message}
+                        <span className="chat__timestamp">
+                            {message.timestamp}
+                        </span>
+                    </p>
+                ))}
             </div>
 
             <div className="chat__footer">
@@ -70,6 +82,6 @@ const Chat = () => {
             </div>
         </div>
     );
-}
+};
 
 export default Chat;
