@@ -42,7 +42,7 @@ export const MessageContainer = styled.div`
     overflow: scroll;
 `;
 
-export const MessageRceived = styled.div`
+export const MessageRceived = styled.p`
     position: relative;
     font-size: 16px;
     padding: 10px;
