@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from "react-router-dom";
 import { SearchOutlined } from "@material-ui/icons";
 import { IconButton } from "@material-ui/core";
 
@@ -57,6 +58,11 @@ export const ChatContainer = styled.div`
     flex: 1;
     background-color: white;
     overflow: scroll;
+`
+
+export const StyledLink = styled(Link)`
+    text-decoration: none !important;
+    color: black;
 `
 
 export const ChatCard = styled.div`
