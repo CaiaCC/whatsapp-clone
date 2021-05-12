@@ -1,4 +1,4 @@
-# Disney+ Clone
+# WhatsApp Clone
 
 This real time chat project is built with React and deployed with Firebase.
 
