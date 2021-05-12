@@ -30,6 +30,7 @@ export const HeaderInfo = styled.div`
 
     p {
         color: gray;
+        font-size: 12px;
     }
 `;
 
