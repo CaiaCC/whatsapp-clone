@@ -19,8 +19,7 @@ const Header = ({ roomName, seed, messages }) => {
             <HeaderInfo>
                 <h3>{roomName}</h3>
                 <p>
-                    Lase seen {""} {new Date( messages[messages.length - 1]?.
-                    timestamp?.toDate() ).toUTCString()}
+                    Lase seen {""} {new Date( messages[messages.length - 1]?.timestamp?.toDate() ).toUTCString()}
                 </p>
             </HeaderInfo>
             <HeaderRight>
